@@ -3,7 +3,7 @@ language: python
 python: "2.7"
 
 # Use the new container infrastructure
-sudo: false
+sudo: required
 
 env:
   - PLAYBOOK=test.yml
@@ -30,3 +30,4 @@ script:
   - "ansible-playbook -i tests/inventory tests/$PLAYBOOK --connection=local --sudo"
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  email: false
