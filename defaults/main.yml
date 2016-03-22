@@ -9,4 +9,3 @@ server_locale: de_DE.UTF-8
 timezone: Europe/Berlin # UTC
 # Default timezone file
 timezone_dir: /etc/localtime
-
