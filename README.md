@@ -31,8 +31,8 @@ Example Playbook
          - { role: bytepark.bytepark-base }
       vars:
         server_packages: [ "screen", "cowsay"]
-  		server_locale: de_DE.UTF-8
-		timezone: UTC
+        server_locale: de_DE.UTF-8
+        timezone: UTC
 
 License
 -------
