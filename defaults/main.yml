@@ -1,3 +1,8 @@
 ---
 # Additional Packages wich needs to be installed
 server_packages: [] #[ "screen", "cowsay"]
+
+# Default timezone
+timezone: UTC
+# Default timezone file
+timezone_file: '/etc/timezone'
