@@ -26,18 +26,18 @@ install:
 
 script:
   # Basic role syntax check
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  - ansible-playbook tests/$PLAYBOOK -i tests/inventory --syntax-check
 
   # initial run
-  - "ansible-playbook -i tests/inventory tests/$PLAYBOOK --connection=local --sudo"
+  - "ansible-playbook tests/$PLAYBOOK -i tests/inventory --connection=local --sudo"
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
-    ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+    ansible-playbook tests/$PLAYBOOK -i tests/inventory --connection=local --sudo
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
-    
+
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   email: false
