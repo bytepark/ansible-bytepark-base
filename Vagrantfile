@@ -9,12 +9,15 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/precise32"
+  config.vm.define 'ansible-bytepark-base' do |machine|
+    machine.vm.box = "ubuntu/precise32"
+    #machine.vm.box = "ubuntu/trusty64"
 
-  #config.vm.provision "shell", inline: "sudo apt-get update && sudo apt-get install -y git"
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "tests/test.yml"
-    ansible.verbose = ENV['ANSIBLE_VERBOSE'] ||= "v"
-    ansible.tags = ENV['ANSIBLE_TAGS'] ||= "all"
+    machine.vm.provision "ansible" do |ansible|
+      ansible.playbook = "tests/test.yml"
+      ansible.sudo = true
+      ansible.verbose = ENV['ANSIBLE_VERBOSE'] ||= "v"
+      ansible.tags = ENV['ANSIBLE_TAGS'] ||= "all"
+    end
   end
 end
