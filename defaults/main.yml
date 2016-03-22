@@ -2,7 +2,11 @@
 # Additional Packages wich needs to be installed
 server_packages: [] #[ "screen", "cowsay"]
 
+# Locale settings
+server_locale: de_DE.UTF-8
+
 # Default timezone
 timezone: Europe/Berlin # UTC
 # Default timezone file
 timezone_dir: /etc/localtime
+

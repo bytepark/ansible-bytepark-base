@@ -22,5 +22,10 @@
   become: true
   file: src=/usr/share/zoneinfo/{{ timezone }} dest={{ timezone_dir }} state=link force=yes backup=yes
 
-# - name: Set default system language pack
-#   shell: locale-gen {{server.locale}}
+- name: Generate default system language pack
+  become: true
+  shell: locale-gen {{server_locale}}
+
+- name: Set default system language pack
+  become: true
+  template: src=locale.j2 dest=/etc/default/locale
