@@ -1,6 +1,6 @@
 ---
 # Additional Packages wich needs to be installed
-server_packages: [] #[ "screen", "cowsay"]
+server_packages: []
 
 # Locale settings
 server_locale: de_DE.UTF-8
