@@ -24,7 +24,8 @@
 
 - name: Generate default system language pack
   become: true
-  shell: locale-gen {{server_locale}}
+  # Note: locale_gen is an extras module, see https://docs.ansible.com/ansible/modules_extra.html
+  locale_gen: name=de_DE.UTF-8 state=present
 
 - name: Set default system language pack
   become: true
