@@ -3,6 +3,6 @@
 server_packages: [] #[ "screen", "cowsay"]
 
 # Default timezone
-timezone: UTC
+timezone: Europe/Berlin # UTC
 # Default timezone file
-timezone_file: '/etc/timezone'
+timezone_dir: '/etc/localtime'

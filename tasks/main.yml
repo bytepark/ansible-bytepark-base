@@ -20,8 +20,10 @@
 
 - name: Configure the timezone
   become: true
-  copy: content="{{ timezone }}"
-        dest="{{timezone_file}}"
+  # copy: content="{{ timezone }}"
+  #       dest="{{timezone_file}}"
+  file: src=/usr/share/zoneninfo/"{{ timezone }}" dest="{{ timezone_dir }}" state=link force=yes backup=yes
+
 
 # - name: More Configuration of timezone
 #   file: src=/usr/share/zoneinfo/{{server.timezone}} dest=/etc/localtime state=link force=yes backup=yes
