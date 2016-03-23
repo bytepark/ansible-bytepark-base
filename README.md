@@ -1,4 +1,4 @@
-Role Name
+ansible-bytepark-base
 =========
 
 Ansible role to install the base for every bytepark host
