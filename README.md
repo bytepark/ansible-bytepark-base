@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bytepark/ansible-bytepark-base.svg?branch=master)](https://travis-ci.org/bytepark/ansible-bytepark-base)
+
 ansible-bytepark-base
 =========
 
