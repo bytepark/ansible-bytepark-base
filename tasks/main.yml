@@ -1,9 +1,9 @@
 ---
-- name: Update apt
+- name: bytepark-base | Update apt
   become: true
   apt: update_cache=yes
 
-- name: Install System Packages
+- name: bytepark-base | Install System Packages
   become: true
   apt: pkg={{ item }} state=latest
   with_items:
@@ -12,21 +12,21 @@
     - python-software-properties
     - openssl
 
-- name: Install Extra 
+- name: bytepark-base | Install Extra 
   become: true
   apt: pkg={{ item }} state=latest
-  with_items: "{{ bytepark-base.server_packages }}"
-  when: bytepark-base.server_packages is defined
+  with_items: "{{ bytepark_base_server_packages }}"
+  when: bytepark_base_server_packages is defined
 
-- name: Configure the bytepark-base.timezone
+- name: bytepark-base | Configure the bytepark_base_timezone
   become: true
-  file: src=/usr/share/zoneinfo/{{ bytepark-base.timezone }} dest={{ bytepark-base.timezone_dir }} state=link force=yes backup=yes
+  file: src=/usr/share/zoneinfo/{{ bytepark_base_timezone }} dest={{ bytepark_base_timezone_dir }} state=link force=yes backup=yes
 
-- name: Generate default system language pack
+- name: bytepark-base | Generate default system language pack
   become: true
   # Note: locale_gen is an extras module, see https://docs.ansible.com/ansible/modules_extra.html
   locale_gen: name=de_DE.UTF-8 state=present
 
-- name: Set default system language pack
+- name: bytepark-base | Set default system language pack
   become: true
   template: src=locale.j2 dest=/etc/default/locale

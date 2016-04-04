@@ -1,11 +1,11 @@
 ---
 # Additional Packages wich needs to be installed
-bytepark-base.server_packages: []
+bytepark_base_server_packages: []
 
 # Locale settings
-bytepark-base.server_locale: de_DE.UTF-8
+bytepark_base_server_locale: de_DE.UTF-8
 
-# Default bytepark-base.timezone
-bytepark-base.timezone: Europe/Berlin # UTC
-# Default bytepark-base.timezone file
-bytepark-base.timezone_dir: /etc/localtime
+# Default bytepark_base_timezone
+bytepark_base_timezone: Europe/Berlin # UTC
+# Default bytepark_base_timezone file
+bytepark_base_timezone_dir: /etc/localtime
