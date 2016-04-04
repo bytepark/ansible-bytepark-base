@@ -15,12 +15,12 @@
 - name: Install Extra 
   become: true
   apt: pkg={{ item }} state=latest
-  with_items: "{{ server_packages }}"
-  when: server_packages is defined
+  with_items: "{{ bytepark-base.server_packages }}"
+  when: bytepark-base.server_packages is defined
 
-- name: Configure the timezone
+- name: Configure the bytepark-base.timezone
   become: true
-  file: src=/usr/share/zoneinfo/{{ timezone }} dest={{ timezone_dir }} state=link force=yes backup=yes
+  file: src=/usr/share/zoneinfo/{{ bytepark-base.timezone }} dest={{ bytepark-base.timezone_dir }} state=link force=yes backup=yes
 
 - name: Generate default system language pack
   become: true
